@@ -19,3 +19,11 @@ body {
   color: var(--green-dark);
   -webkit-font-smoothing: antialiased;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
