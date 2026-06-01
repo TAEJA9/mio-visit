@@ -33,19 +33,26 @@ function ResultContent() {
 
         const reader = res.body!.getReader()
         const decoder = new TextDecoder()
+        let buffer = ''
 
         while (true) {
           const { done, value } = await reader.read()
           if (done) break
 
-          const text = decoder.decode(value)
-          const lines = text.split('\n\n').filter(l => l.startsWith('data: '))
+          buffer += decoder.decode(value, { stream: true })
+          const parts = buffer.split('\n\n')
+          buffer = parts.pop() ?? ''
 
-          for (const line of lines) {
-            const chunk: StreamChunk = JSON.parse(line.replace('data: ', ''))
-            if (chunk.type === 'status') setStatus(chunk.message)
-            else if (chunk.type === 'result') setResult(chunk.data)
-            else if (chunk.type === 'error') setError(chunk.message)
+          for (const part of parts) {
+            if (!part.startsWith('data: ')) continue
+            try {
+              const chunk: StreamChunk = JSON.parse(part.slice(6))
+              if (chunk.type === 'status') setStatus(chunk.message)
+              else if (chunk.type === 'result') setResult(chunk.data)
+              else if (chunk.type === 'error') setError(chunk.message)
+            } catch {
+              // malformed chunk — skip
+            }
           }
         }
       } catch {
