@@ -33,11 +33,11 @@ export default function ResultCard({ data, onRetry }: ResultCardProps) {
         {/* 뱃지 */}
         <div className="absolute top-4 right-4">
           {data.event?.isLastDay ? (
-            <span className="bg-yellow-400 text-yellow-900 text-xs font-black px-3 py-1.5 rounded-full">
+            <span className="bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1.5 rounded-full">
               오늘 마지막 날 🎉
             </span>
           ) : (
-            <span className="bg-yellow-400 text-yellow-900 text-xs font-black px-3 py-1.5 rounded-full">
+            <span className="bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1.5 rounded-full">
               오늘 딱이에요 ✨
             </span>
           )}
@@ -78,13 +78,13 @@ export default function ResultCard({ data, onRetry }: ResultCardProps) {
       <div className="px-5 pb-8 flex gap-3">
         <button
           onClick={handleMapOpen}
-          className="flex-1 bg-[--green-deep] text-white rounded-2xl py-4 font-bold text-sm"
+          className="flex-1 bg-[--green-deep] text-white rounded-2xl py-4 font-medium text-sm"
         >
           지금 출발할게요 →
         </button>
         <button
           onClick={onRetry}
-          className="bg-white text-[--green-deep] border border-[--green-border] rounded-2xl px-4 font-semibold text-sm"
+          className="bg-white text-[--green-deep] border border-[--green-border] rounded-2xl px-4 font-medium text-sm"
         >
           다시 ↻
         </button>

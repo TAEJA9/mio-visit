@@ -58,13 +58,13 @@ export default function OnboardingPage() {
         <button
           onClick={handleGPS}
           disabled={loading}
-          className="w-full bg-[--green-deep] text-white rounded-2xl py-4 font-bold text-base disabled:opacity-60"
+          className="w-full bg-[--green-deep] text-white rounded-2xl py-4 font-medium text-base disabled:opacity-60"
         >
           {loading ? '위치 확인 중...' : '📍 내 위치에서 출발'}
         </button>
         <button
           onClick={handleManual}
-          className="w-full bg-white text-[--green-deep] border border-[--green-border] rounded-2xl py-4 font-semibold text-base"
+          className="w-full bg-white text-[--green-deep] border border-[--green-border] rounded-2xl py-4 font-medium text-base"
         >
           직접 출발지 입력
         </button>

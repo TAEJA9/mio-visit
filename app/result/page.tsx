@@ -71,10 +71,10 @@ function ResultContent() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <p className="text-4xl mb-4">😔</p>
-        <p className="text-[--green-dark] font-bold mb-2">아쉽게도 지금은 어려워요</p>
+        <p className="text-[--green-dark] font-medium mb-2">아쉽게도 지금은 어려워요</p>
         <p className="text-sm text-gray-500 mb-6">{error}</p>
         <button onClick={handleRetry}
-          className="bg-[--green-deep] text-white px-6 py-3 rounded-xl font-bold">
+          className="bg-[--green-deep] text-white px-6 py-3 rounded-xl font-medium">
           다시 시도
         </button>
       </div>

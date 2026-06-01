@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body>
-        <div className="min-h-screen flex justify-center bg-[--green-light]">
-          <div className="w-full max-w-[430px] min-h-screen relative bg-white shadow-xl">
+        <div className="min-h-screen bg-[--green-light]">
+          <div className="w-full md:max-w-[640px] lg:max-w-[800px] mx-auto min-h-screen bg-white md:shadow-xl">
             {children}
           </div>
         </div>
