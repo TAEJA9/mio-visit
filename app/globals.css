@@ -2,11 +2,13 @@
 @import 'tailwindcss';
 
 :root {
-  --green-deep: #3D6E4A;
-  --green-mid: #7DAE7D;
-  --green-light: #EEF4EE;
-  --green-dark: #1A2E1A;
-  --green-border: #B8D4B8;
+  --cream: #FAF8F4;
+  --sidebar: #F2EDE4;
+  --sage: #87A88A;
+  --sage-dark: #5C8060;
+  --ink: #1C1C1C;
+  --muted: #6B6B6B;
+  --border: #E4DDD4;
 }
 
 * {
@@ -15,8 +17,8 @@
 
 body {
   font-family: 'PretendardVariable', -apple-system, sans-serif;
-  background: var(--green-light);
-  color: var(--green-dark);
+  background: var(--cream);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
 

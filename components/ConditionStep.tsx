@@ -1,3 +1,5 @@
+'use client'
+
 interface Option {
   value: string
   label: string
@@ -8,41 +10,27 @@ interface ConditionStepProps {
   options: Option[]
   onSelect: (value: string) => void
   selected?: string
-  showConfirm?: boolean
-  onConfirm?: () => void
 }
 
 export default function ConditionStep({
-  options, onSelect, selected, showConfirm, onConfirm
+  options, onSelect, selected
 }: ConditionStepProps) {
   return (
-    <div>
-      <div className="flex flex-wrap gap-2">
-        {options.map(opt => (
-          <button
-            key={opt.value}
-            onClick={() => onSelect(opt.value)}
-            className={`
-              px-4 py-2 rounded-full text-sm font-medium border transition-all
-              ${selected === opt.value
-                ? 'bg-[--green-deep] text-white border-[--green-deep]'
-                : 'bg-white text-[--green-deep] border-[--green-border] hover:border-[--green-deep]'
-              }
-            `}
-          >
-            {opt.emoji && <span className="mr-1">{opt.emoji}</span>}
-            {opt.label}
-          </button>
-        ))}
-      </div>
-      {showConfirm && selected && (
+    <div className="flex flex-col gap-2">
+      {options.map(opt => (
         <button
-          onClick={onConfirm}
-          className="mt-5 w-full bg-[--green-deep] text-white rounded-xl py-3.5 font-medium text-base"
+          key={opt.value}
+          onClick={() => onSelect(opt.value)}
+          className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            selected === opt.value
+              ? 'bg-[--sage] text-white'
+              : 'text-[--ink] hover:bg-[--border]'
+          }`}
         >
-          추천받기 →
+          {opt.emoji && <span className="mr-2">{opt.emoji}</span>}
+          {opt.label}
         </button>
-      )}
+      ))}
     </div>
   )
 }

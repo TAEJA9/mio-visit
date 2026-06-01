@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body>
-        <div className="min-h-screen bg-[--green-light]">
-          <div className="w-full md:max-w-[640px] lg:max-w-[800px] mx-auto min-h-screen bg-white md:shadow-xl">
+        <div className="min-h-screen bg-[--cream]">
+          <div className="w-full mx-auto min-h-screen bg-[--cream]">
             {children}
           </div>
         </div>
